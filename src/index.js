@@ -1,4 +1,7 @@
+import 'rangetouch'
+
 const CHOICES_CONTAINER_CLASSNAME = 'upwork-custom-image-slider-choices-container';
+const CHOICE_BASE_CLASSNAME = 'upwork-custom-image-slider-choice-';
 const IMAGE_CONTAINER_CLASSNAME = 'upwork-custom-image-slider-images-container';
 const IMAGE_SLIDER_CLASSNAME = 'upwork-custom-image-slider';
 
@@ -82,10 +85,14 @@ class QualtricsImageSlider {
         let choicesContainer = document.createElement('div');
         choicesContainer.setAttribute('class', CHOICES_CONTAINER_CLASSNAME);
 
-        for (let i = 0; i < 3; ++i) {
-            var newDiv = document.createElement('div');
+        const childPositions = ['left', 'middle', 'right'];
+
+        childPositions.forEach(position => {
+            let childClass = CHOICE_BASE_CLASSNAME + position;
+            let newDiv = document.createElement('div');
+            newDiv.setAttribute('class', childClass);
             choicesContainer.appendChild(newDiv);
-        }
+        });
 
         return choicesContainer;
     }

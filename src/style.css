@@ -50,11 +50,11 @@
 .upwork-custom-image-slider::-moz-range-thumb {
     width: 20px;
     height: 20px;
+    -moz-appearance: none;
     border-radius: 50%;
     background: #c32432;
     opacity: .5;
     cursor: pointer;
-    padding: 10px;
 }
 
 .upwork-custom-image-slider-images-container {

@@ -5,6 +5,9 @@
 }
 
 .upwork-custom-image-slider {
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
     margin: 10px auto;
     -webkit-appearance: none;
     width: 100%;

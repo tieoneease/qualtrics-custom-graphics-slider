@@ -21,6 +21,17 @@
     outline: none;
 }
 
+.upwork-custom-image-slider::-ms-track {
+    width: 100%;
+    height: 8px;
+    cursor: pointer;
+    animate: 0.2s;
+    background: #d3d3d3;
+    border-radius: 40px;
+    border: 0px solid #000101;
+    color: transparent;
+}
+
 .upwork-custom-image-slider:focus {
     outline: none;
 }
@@ -54,6 +65,16 @@
     width: 20px;
     height: 20px;
     -moz-appearance: none;
+    border-radius: 50%;
+    background: #c32432;
+    opacity: .5;
+    cursor: pointer;
+}
+
+.upwork-custom-image-slider::-ms-thumb {
+    border: none;
+    height: 20px;
+    width: 20px;
     border-radius: 50%;
     background: #c32432;
     opacity: .5;

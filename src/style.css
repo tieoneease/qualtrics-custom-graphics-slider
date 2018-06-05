@@ -26,10 +26,26 @@
     height: 8px;
     cursor: pointer;
     animate: 0.2s;
+
+    color: transparent;
+        /*remove bg colour from the track, we'll use ms-fill-lower and ms-fill-upper instead */
+    background: transparent;
+    
+    /*leave room for the larger thumb to overflow with a transparent border */
+    border-color: transparent;
+    border-width: 10px 0;
+
+    /*remove default tick marks*/
+    color: transparent;
+}
+
+.upwork-custom-image-slider::-ms-fill-lower {
     background: #d3d3d3;
     border-radius: 40px;
-    border: 0px solid #000101;
-    color: transparent;
+}
+.upwork-custom-image-slider::-ms-fill-upper {
+    background: #d3d3d3;
+    border-radius: 40px;
 }
 
 .upwork-custom-image-slider:focus {

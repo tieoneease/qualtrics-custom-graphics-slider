@@ -219,4 +219,4 @@ function trigger(element, type, properties) {
   element.dispatchEvent(event);
 }
 
-global.QualtricsImageSlider = QualtricsImageSlider;
+window.QualtricsImageSlider = QualtricsImageSlider;

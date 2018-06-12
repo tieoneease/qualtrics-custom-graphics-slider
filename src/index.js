@@ -79,6 +79,23 @@ class QualtricsImageSlider {
             if (!instance.config.hideCurrentSelection)
                 choicesContainer.children[1].innerHTML = questionChoices[selectedIndex + 1].Text;
         }
+
+        if (isIE()) {
+            slider.onchange = function() {
+                let selectedIndex = parseInt(this.value);
+                let selectedChoiceId = selectedIndex + 1;
+
+                instance.config.engineInstance.setChoiceValue(selectedChoiceId, true);
+
+                // Hide all images, show only selected
+                Array.from(instance.images.children).forEach(image => image.style.display = 'none');
+                instance.images.children[selectedIndex].style.display = 'block';
+
+                // Set Active Choice Text
+                if (!instance.config.hideCurrentSelection)
+                    choicesContainer.children[1].innerHTML = questionChoices[selectedIndex + 1].Text;
+            }
+        }
         
         slider.ontouchstart = set;
         slider.ontouchmove = set;
@@ -218,5 +235,11 @@ function trigger(element, type, properties) {
   // Dispatch the event
   element.dispatchEvent(event);
 }
+
+var isIE = function() {
+    var userAgent = navigator.userAgent;
+    return userAgent.indexOf('MSIE') !== -1 ||  
+        userAgent.indexOf('Trident') !== -1;
+};
 
 window.QualtricsImageSlider = QualtricsImageSlider;
